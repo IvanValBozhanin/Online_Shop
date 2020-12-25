@@ -13,16 +13,30 @@ public class Publisher extends Producer{
     }
 
     public void publishBook(String nameOfBook){
-        Book book = new Book(nameOfBook, this);
-        books.add(book);
+        try {
+            Book book = new Book(nameOfBook, this);
+            if(books.contains(book)){
+                throw new Exception(String.format("——— Model '%s' already exists! ———", nameOfBook));
+            }
+            books.add(book);
+        } catch (Exception exception){
+            System.out.println(exception.getMessage());
+        }
     }
 
     @Override
-    public void getProducts() {
-        System.out.printf("%s", books.get(0).getName());
-        for(int i=1; i < books.size(); ++i){
-            System.out.printf(", %s", books.get(i).getName());
+    public void printProducts() {
+        try{
+            if(books.isEmpty()){
+                throw new Exception(String.format("——— Publisher '%s' has not published any books yet! ———", this.getName()));
+            }
+            System.out.printf("%s", books.get(0).getName());
+            for(int i=1; i < books.size(); ++i){
+                System.out.printf(", %s", books.get(i).getName());
+            }
+            System.out.println();
+        } catch (Exception exception){
+            System.out.println(exception.getMessage());
         }
-        System.out.println();
     }
 }
