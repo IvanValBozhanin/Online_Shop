@@ -4,7 +4,7 @@ public abstract class Producer {
     private String name;
     private String country;
 
-    public abstract void getProducts();
+    public abstract void printProducts();
 
     public String getName() {
         return name;
