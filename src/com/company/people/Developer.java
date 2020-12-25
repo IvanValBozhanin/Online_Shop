@@ -15,6 +15,10 @@ public class Developer extends Producer{
         phones = new ArrayList<>();
     }
 
+    public void developComputer(String nameOfComputer){
+
+    }
+
     @Override
     public void getProducts() {
         getComputers();
