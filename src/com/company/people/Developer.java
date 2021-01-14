@@ -42,11 +42,11 @@ public class Developer extends Producer{
 
     @Override
     public void printProducts() {
-        getComputers();
-        getPhones();
+        printComputers();
+        printPhones();
     }
 
-    public void getComputers(){
+    public void printComputers(){
         try {
             if (computers.isEmpty()) {
                 throw new Exception(String.format("——— Developer '%s' has not developed any computer yet! ———", this.getName()));
@@ -61,7 +61,7 @@ public class Developer extends Producer{
         }
     }
 
-    public void getPhones(){
+    public void printPhones(){
         try {
             if (phones.isEmpty()) {
                 throw new Exception(String.format("——— Developer '%s' has not developed any phones yet! ———", this.getName()));
