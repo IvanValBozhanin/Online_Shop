@@ -1,8 +1,5 @@
 package com.company;
 
-import com.company.entities.Book;
-import com.company.entities.Computer;
-import com.company.entities.Phone;
 import com.company.entities.Product;
 import com.company.people.Developer;
 import com.company.people.Publisher;
@@ -32,10 +29,13 @@ public class Shop {
 
     public void addPublisher(Publisher p){
         publishers.add(p);
+        products.addAll(p.getBooks());
     }
 
     public void addDeveloper(Developer d){
         developers.add(d);
+        products.addAll(d.getComputers());
+        products.addAll(d.getPhones());
     }
 
     public void addUser(User u){
@@ -70,5 +70,9 @@ public class Shop {
             System.out.printf("%s (%s): ", developer.getName(), developer.getCountry());
             developer.printPhones();
         }
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
     }
 }

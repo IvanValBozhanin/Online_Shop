@@ -83,6 +83,14 @@ public class Main {
         shop.addUser(u1);
         shop.addUser(u2);
 
+        u1.addToCart(shop.getProducts().get(1));
+        u1.addToCart(shop.getProducts().get(0));
+        u1.addToCart(shop.getProducts().get(3));
+        u1.addToCart(shop.getProducts().get(4));
+        u1.purchaseAll();
 
+        u2.addToWishList(shop.getProducts().get(2));
+        u1.printCartItems();
+        u2.printWishListItems();
     }
 }

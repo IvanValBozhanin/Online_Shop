@@ -29,6 +29,12 @@ public class User{
         System.out.println();
     }
 
+    public void purchaseAll(){
+        System.out.print("Added to checkout items from ");
+        printCartItems();
+        cart.clear();
+    }
+
     public void addToCart(Product product){
         cart.addProduct(product);
     }

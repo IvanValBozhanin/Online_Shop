@@ -39,4 +39,8 @@ public class Publisher extends Producer{
             System.out.println(exception.getMessage());
         }
     }
+
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
 }

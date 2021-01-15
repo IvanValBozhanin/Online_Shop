@@ -75,4 +75,12 @@ public class Developer extends Producer{
             System.out.println(exception.getMessage());
         }
     }
+
+    public ArrayList<Computer> getComputers() {
+        return computers;
+    }
+
+    public ArrayList<Phone> getPhones() {
+        return phones;
+    }
 }
